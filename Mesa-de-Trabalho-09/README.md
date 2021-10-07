@@ -1,18 +1,18 @@
 # Pokedex Updatex
 
-Este sera un repaso bastante complicado, ya que tendras que arreglar el código.
-El objetivo es lograr que al seleccionar un pokemon de la pokedex, te devuelva la imagen, nombre y sus tipos.
+Esta será uma revisão bastante complicada, pois você terá que corrigir o código.
+O objetivo é conseguir que ao selecionar um pokémon da pokedex, ele retorne a imagem, o nome e seus tipos.
 
-## Ayudas y consejos
-- El proyecto cuenta con un `json` con muchos datos de pokemons.
-- La pokedex recibe un arreglo de pokemons y una funcion... no perdamos el `this` de la funcion
-- Debe respetarse el nombre de la variable `pokemon` para que funcione todo bien cuando hagan los states
+## Ajuda e conselhos
+- O projeto tem um `json` com muitos dados de pokemons.
+- O pokedex recebe um array de pokemons e uma função ... não vamos perder o `this` da função
+- O nome da variável `pokemon` deve ser respeitado para que tudo funcione bem ao fazer os estados
 
-## Bonus Extra
-En caso de haber terminado, te invito a realizar dos tareas adicionales:
-1) Cuando trabajamos con estilos, lo mejor es respetar un orden... este proyecto utiliza un archivo CSS, style inline y un archivo js con estilos. Elegir uno y mantenerlo
-2) Podemos revisar que el `json` tiene mas datos, te invito a utilizarlo modificando el codigo.
+## Bônus extra
+Caso você tenha terminado, convido-o a realizar duas tarefas adicionais:
+1) Quando trabalhamos com estilos, é melhor respeitar uma ordem ... este projeto usa um arquivo CSS, estilo inline e um arquivo js com estilos. Escolha um e guarde-o
+2) Podemos verificar se o `json` possui mais dados, convido você a utilizá-lo modificando o código.
 
-### Pasos para correr el proyecto
-Relizar primero `npm install`
-Relizar segundo `npm start`
+### Passos para executar o projeto
+Execute `npm install` primeiro
+Execute o segundo `npm start`
