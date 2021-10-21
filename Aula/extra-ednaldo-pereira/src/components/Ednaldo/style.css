@@ -1,0 +1,16 @@
+#ednaldo{
+  background: #adadad;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#ednaldo h2{
+  margin-bottom: 20px;
+}
+
+#ednaldo ul{
+  list-style-type: none;
+}
