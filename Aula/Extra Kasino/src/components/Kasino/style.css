@@ -1,0 +1,12 @@
+#kasino{
+  background: #adadad;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#kasino h2{
+  margin-bottom: 20px;
+}
