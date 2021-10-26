@@ -1,8 +1,12 @@
 import './style.css';
 
-const Paragraph = ({children}) => {
+const Paragraph = ({usuario, funcao, children}) => {
+
   return(
-    <p>{children}</p>
+    <>
+    <p>Olá, {usuario.firstName}, {children}</p>
+    {funcao()}
+    </>
   )
 }
 

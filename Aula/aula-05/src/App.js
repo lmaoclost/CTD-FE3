@@ -8,11 +8,18 @@ function App() {
     lastName: 'XX'
   }
 
+  const funcao = () => {
+    console.log('foi');
+  }
+
   return (
-    <div className="App">
-      <Greeting user={user}/>
-      <Paragraph>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id, iusto sunt. Repellendus, facere aspernatur quo sequi labore aperiam, quisquam nesciunt ut reiciendis recusandae laborum deserunt cum soluta nostrum ullam mollitia!</Paragraph>
-    </div>
+    <>
+      <h2>Fragment</h2>
+      <div className="App">
+        <Greeting user={user}/>
+        <Paragraph funcao={funcao} usuario={user}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa soluta quia, odit perferendis quasi quae eaque cumque culpa atque aliquam ut possimus fugiat labore explicabo velit accusamus quos voluptate natus!</Paragraph>
+      </div>
+    </>
   );
 }
 
