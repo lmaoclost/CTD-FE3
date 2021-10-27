@@ -6,10 +6,9 @@ const Footer = ({empresa}) => {
     const currentYear = `${new Date().getFullYear()}`;
     return creationYear === currentYear ? currentYear : `${creationYear} - ${currentYear}`;
   }
-
   return(
     <footer id="footer">
-      <h3>{empresa} Todos os direitos reservados. &copy;Copyright {generateDateString()}</h3>
+      <h3>{empresa} Todos os direitos reservados. &copy; Copyright {generateDateString()}</h3>
     </footer>
   )
 }
