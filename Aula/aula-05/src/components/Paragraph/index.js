@@ -1,13 +1,13 @@
 import './style.css';
 
-const Paragraph = ({usuario, funcao, children}) => {
+const Paragraph = ({funcao, children}) => {
 
   return(
     <>
-    <p>Olá, {usuario.firstName}, {children}</p>
-    {funcao()}
+      <p>{children}</p>
+      {funcao()}
     </>
-  )
+  );
 }
 
 export default Paragraph;
