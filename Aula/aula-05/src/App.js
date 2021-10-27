@@ -1,5 +1,5 @@
 import Greeting from './components/Greeting';
-import Paragraph from './components/Paragraph';
+import Video from './components/Video';
 import './App.css';
 
 function App() {
@@ -7,18 +7,14 @@ function App() {
     firstName: 'Turma',
     lastName: 'XX'
   }
-
-  const funcao = () => {
-    console.log('uepaaaaaaaaaaaaa');
-  }
   
   return (
     <>
       <div className="App">
         <Greeting user={user} />
-        <Paragraph funcao={funcao}>
-          Lorem, ipsum dolor {user.firstName} sit amet consectetur adipisicing elit. Voluptatibus ab, repellat, nulla eos doloremque quidem, laborum tempore quis perferendis aliquam impedit minus pariatur quia nobis. Veniam, nisi! Assumenda, exercitationem cumque.
-        </Paragraph>
+        <Video url="https://www.youtube.com/embed/l04_GGlr3BI">
+          Parabains {user.firstName}.
+        </Video>
       </div>
     </>
   );
