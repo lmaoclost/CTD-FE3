@@ -9,15 +9,16 @@ function App() {
   }
 
   const funcao = () => {
-    console.log('foi');
+    console.log('uepaaaaaaaaaaaaa');
   }
-
+  
   return (
     <>
-      <h2>Fragment</h2>
       <div className="App">
-        <Greeting user={user}/>
-        <Paragraph funcao={funcao} usuario={user}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa soluta quia, odit perferendis quasi quae eaque cumque culpa atque aliquam ut possimus fugiat labore explicabo velit accusamus quos voluptate natus!</Paragraph>
+        <Greeting user={user} />
+        <Paragraph funcao={funcao}>
+          Lorem, ipsum dolor {user.firstName} sit amet consectetur adipisicing elit. Voluptatibus ab, repellat, nulla eos doloremque quidem, laborum tempore quis perferendis aliquam impedit minus pariatur quia nobis. Veniam, nisi! Assumenda, exercitationem cumque.
+        </Paragraph>
       </div>
     </>
   );
