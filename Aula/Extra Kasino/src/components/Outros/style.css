@@ -1,3 +1,7 @@
+#outros{
+  margin: 60px 0;
+}
+
 #outros .grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);

@@ -1,10 +1,11 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import './style.css'
 
-const Header = () => {
+const Header = ({empresa}) => {
 
   return (
     <header>
-      <h1>Kasino DH</h1>
+      <h1>{empresa} DH</h1>
       <nav>
         <ul>
           <li><a href="#">Kasino</a></li>
