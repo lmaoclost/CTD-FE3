@@ -9,7 +9,7 @@ function App() {
   const nomeEmpresa = 'Ednaldo Pereira';
 
   return (
-    <div>
+    <>
       <Header empresa={nomeEmpresa} />
       <main>
         <Banner>
@@ -25,7 +25,7 @@ function App() {
         <Galeria />
       </main>
       <Footer empresa={nomeEmpresa} />
-    </div>
+    </>
   );
 }
 
