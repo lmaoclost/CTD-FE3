@@ -1,9 +1,11 @@
 import './style.css';
 
-const Banner = () => {
+const Banner = ({children}) => {
   return(
     <section id="banner">
-      <iframe src="https://www.youtube.com/embed/WAg0yciwIGw?autoplay=1&mute=1&showinfo=0&controls=0" title="Ednaldo"></iframe>
+      <div className="banner-text">
+        {children}
+      </div>
     </section>
   )
 }
