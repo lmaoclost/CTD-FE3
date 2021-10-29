@@ -1,13 +1,14 @@
 import './style.css';
 
-const Header = () => {
+const Header = ({empresa}) => {
 
   return(
-    <header id="header">
-      <h1>Valorant do Amor</h1>
+    <header>
+      <h1>{empresa}</h1>
       <nav>
         <ul>
-          <li><a href="#header">Valorant</a></li>
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+          <li><a href="#">Valorant</a></li>
           <li><a href="#galeria">Videos</a></li>
           <li><a href="#footer">Footer</a></li>
         </ul>

@@ -1,6 +1,6 @@
 import './style.css';
 
-const Footer = () => {
+const Footer = ({empresa}) => {
   const generateDateString = () => {
     const creationYear = '2021';
     const currentYear = `${new Date().getFullYear()}`;
@@ -9,7 +9,7 @@ const Footer = () => {
 
   return(
     <footer id="footer">
-      <h3>Todos os direitos reservados. &copy;Copyright {generateDateString()}</h3>
+      <h3>{empresa} Todos os direitos reservados. &copy;Copyright {generateDateString()}</h3>
     </footer>
   )
 }
