@@ -1,8 +1,8 @@
-import './style.css';
+import './style.scss';
 
-const Video = ({url, children}) => {
+const Video = ({ url, children }) => {
 
-  return(
+  return (
     <>
       <iframe src={url} title={children} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <h3>{children}</h3>

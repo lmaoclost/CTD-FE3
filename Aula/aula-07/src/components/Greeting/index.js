@@ -1,15 +1,15 @@
-import './style.css';
+import './style.scss';
 
-function Greeting({user}){
+function Greeting({ user }) {
 
   const greeting = () => {
-    if(user.firstName){
-      return  `${user.firstName} ${user.lastName}`;
+    if (user.firstName) {
+      return `${user.firstName} ${user.lastName}`;
     }
-    return  'Turma desconhecida';
+    return 'Turma desconhecida';
   }
 
-  return(
+  return (
     <h1>Olá, {greeting()}</h1>
   )
 }
