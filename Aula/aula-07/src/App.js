@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import { Fragment } from 'react';
 import Greeting from './components/Greeting';
 import Video from './components/Video';
 import './App.scss';
@@ -6,18 +7,27 @@ import './App.scss';
 function App() {
   const listagemDeAlunos = [
     {
+      id: 0,
       firstName: 'João',
       lastName: 'Silva'
     },
     {
+      id: 756,
       firstName: 'Fulano',
       lastName: 'Alberto'
     },
     {
+      id: 74,
       firstName: 'John',
       lastName: 'Doe'
     },
     {
+      id: 964,
+      firstName: 'Jane',
+      lastName: 'Doe'
+    },
+    {
+      id: 1,
       firstName: 'Ciclano',
       lastName: 'Beltrano'
     }
@@ -60,14 +70,14 @@ function App() {
       </nav>
       <div className="App">
         {
-          listagemDeAlunos.map((aluno, index) => {
+          listagemDeAlunos.map((aluno) => {
             return (
-              <>
-                <Greeting key={index} user={aluno} />
+              <Fragment key={aluno.id}>
+                <Greeting user={aluno} />
                 <Video url="https://www.youtube.com/embed/l04_GGlr3BI">
                   Parabains {aluno.firstName}.
                 </Video>
-              </>
+              </Fragment>
             )
           })
         }
