@@ -1,11 +1,11 @@
-import { Component, Fragment } from 'react';
+import { Component } from 'react';
 import './App.scss';
 
-class App extends Component {
+export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      soma: 0,
+      valor: 0,
       mostraNome: false,
       listagemDeAlunos: [
         {
@@ -22,9 +22,10 @@ class App extends Component {
     }
   }
   render() {
+
     const somaUm = () => {
       this.setState({
-        soma: this.state.soma + 1
+        valor: this.state.valor + 1
       })
     }
 
@@ -47,25 +48,26 @@ class App extends Component {
       <>
         {/* Incremental */}
         <div className="d-flex flex-wrap flex-column justify-content-center align-items-center py-3 my-4">
-          <h2>{this.state.soma}</h2>
+          <h2>{this.state.valor}</h2>
           <button className="btn btn-primary" onClick={somaUm}>Soma Um</button>
         </div>
 
         {/* Alternador */}
         <div className="d-flex flex-wrap flex-column justify-content-center align-items-center py-3 my-4">
-          {this.state.mostraNome && (<h2>
-            Nome do cara
-          </h2>)}
+          {/* {this.state.mostraNome ? <h2>Patricia Ruffino</h2> : ''} */}
+          {this.state.mostraNome && (
+            <h2>Patricia Ruffino</h2>
+          )}
           <button className="btn btn-primary" onClick={mostraNomeToggler}>Mostra nome</button>
         </div>
 
-        {/* Remove aluno */}
+        {/* Remove Aluno */}
         <div className="d-flex flex-wrap flex-column justify-content-center align-items-center py-3 my-4">
           {
-            this.state.listagemDeAlunos.map((aluno) => {
+            this.state.listagemDeAlunos.map(({ id, firstName }) => {
               return (
-                <div key={aluno.id} onClick={() => removeAluno(aluno.id)}>
-                  <h3>{aluno.firstName}</h3>
+                <div key={id} onClick={() => removeAluno(id)}>
+                  <h3>{firstName}</h3>
                 </div>
               )
             })
@@ -75,5 +77,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;
