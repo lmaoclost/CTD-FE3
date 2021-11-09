@@ -1,8 +1,8 @@
 #footer {
   h3 {
-    font-size: 1.25rem;
-  }
-  h3::first-letter {
-    color: red;
+    font-size: 30px;
+    &::first-letter {
+      color: red;
+    }
   }
 }
