@@ -1,0 +1,19 @@
+header {
+  .navbar-brand {
+    font-size: 30px;
+    &::first-letter {
+      color: red;
+    }
+  }
+
+  .nav-link {
+    padding: 10px;
+    border-radius: 9px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: red;
+    }
+  }
+}
