@@ -1,8 +1,8 @@
-import './style.css';
+import './style.scss';
 
-const Banner = ({children}) => {
+const Banner = ({ children }) => {
 
-  return(
+  return (
     <section id="banner">
       <div className="banner-text">
         {children}
