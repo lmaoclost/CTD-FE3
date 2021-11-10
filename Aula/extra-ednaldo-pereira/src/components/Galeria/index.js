@@ -1,5 +1,5 @@
 import Video from '../Video';
-import './style.css';
+import './style.scss';
 
 const Galeria = () => {
 

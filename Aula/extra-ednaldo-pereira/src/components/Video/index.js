@@ -1,6 +1,6 @@
-import './style.css';
+import './style.scss';
 
-const Video = ({url, title}) => {
+const Video = ({ url, title }) => {
 
   return (
     <div className="grid-item">

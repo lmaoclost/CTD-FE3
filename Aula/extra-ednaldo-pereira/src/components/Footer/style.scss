@@ -1,0 +1,7 @@
+#footer {
+  h3 {
+    &::first-letter {
+      color: red;
+    }
+  }
+}
