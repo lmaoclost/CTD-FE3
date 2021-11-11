@@ -1,5 +1,5 @@
 {
-  "name": "aula-08",
+  "name": "aula-11",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,7 +8,7 @@
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "sass": "^1.43.4",
-    "sweetalert2": "^11.1.9"
+    "sweetalert2": "^11.1.10"
   },
   "scripts": {
     "start": "react-scripts start",

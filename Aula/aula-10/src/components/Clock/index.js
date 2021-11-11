@@ -11,14 +11,17 @@ export default class Clock extends Component {
   }
 
   componentDidMount() {
-    this.timerID = setInterval(() => this.tick(), 1000);
+    this.timerID = setInterval(this.tick, 1000);
 
-    fetch('https://api.themoviedb.org/3/discover/movie?api_key=f6541db294ac187416fae0f1b9effcce&language=pt-BR').then((response) => response.json()).then((response) => {
-      this.setState({ movieList: response.results })
+    fetch('https://api.themoviedb.org/3/discover/movie?api_key=f6541db294ac187416fae0f1b9effcce&language=pt-BR').then((response) => response.json()).then(({ results }) => {
+      this.setState({
+        movieList: results
+      })
     });
   }
 
   componentDidUpdate() {
+    // console.log('alterou');
   }
 
   componentWillUnmount() {
@@ -26,7 +29,9 @@ export default class Clock extends Component {
   }
 
   tick = () => {
-    this.setState({ date: new Date() })
+    this.setState({
+      date: new Date()
+    })
   }
 
   render() {
