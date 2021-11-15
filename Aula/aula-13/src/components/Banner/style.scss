@@ -1,0 +1,26 @@
+#banner {
+  width: 100%;
+  height: calc(100vh - 81px);
+  background-image: url("https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt962a6518612d78db/6131a93da9655d098c7cd8f0/09082021-Episode-3-Act-II-Overview-Article-Banner.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .banner-text {
+    color: white;
+    /* filter: drop-shadow(5px 5px 5px #222); */
+    text-shadow: 5px 5px 5px #222;
+    text-align: center;
+    width: 50%;
+
+    h2 {
+      font-size: 50px;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+}

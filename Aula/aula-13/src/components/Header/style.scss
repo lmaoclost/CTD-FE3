@@ -1,0 +1,21 @@
+header {
+  .navbar-brand {
+    font-size: 30px;
+
+    &::first-letter {
+      color: red;
+    }
+  }
+  li a {
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 9px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background: red;
+      color: black !important;
+    }
+  }
+}
