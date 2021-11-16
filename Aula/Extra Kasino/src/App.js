@@ -2,6 +2,7 @@ import { Component } from 'react';
 import Header from './components/Header';
 import Banner from './components/Banner';
 import Outros from './components/Outros';
+import Formulario from './components/Formulario';
 import Footer from './components/Footer';
 
 import './App.scss';
@@ -33,6 +34,7 @@ export default class App extends Component {
             <p>Kasino é uma religião criada pelos alunos da turma 1 de 2021 após perderem a sanidade na pandemia do coronga.</p>
           </Banner>
           <Outros />
+          <Formulario />
         </main>
         <Footer empresa={this.nomeEmpresa} temaEscuro={this.state.temaEscuro} />
       </>
