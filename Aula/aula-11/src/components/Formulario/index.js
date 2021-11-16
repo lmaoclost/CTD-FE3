@@ -3,7 +3,7 @@ import { Formik, Form, Field } from 'formik';
 import Swal from 'sweetalert2';
 
 export default class Formulario extends Component {
-  handleSubmit = ({ nome, number }) => {
+  handleSubmit = ({ nome, idade }) => {
     if (nome === '') {
       Swal.fire({
         title: 'Aconteceu um erro',
@@ -23,11 +23,11 @@ export default class Formulario extends Component {
   render() {
     return (
       <>
-        <Formik initialValues={{ nome: '', number: 0 }} onSubmit={this.handleSubmit}>
+        <Formik initialValues={{ nome: '', idade: '' }} onSubmit={this.handleSubmit}>
           <Form>
             <Field placeholder="Insira seu nome" type="text" name="nome" id="nome" className="form-control" />
-            <Field placeholder="Insira sua idade" type="number" name="number" id="number" className="form-control" />
-            <button type="submit">Enviar</button>
+            <Field placeholder="Insira sua idade" type="number" name="idade" id="idade" className="form-control" />
+            <button className="btn btn-primary" type="submit">Enviar</button>
           </Form>
         </Formik>
       </>
