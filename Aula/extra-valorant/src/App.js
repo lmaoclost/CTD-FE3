@@ -2,6 +2,7 @@ import { Component } from 'react';
 import Header from './components/Header';
 import Banner from './components/Banner';
 import Galeria from './components/Galeria';
+import Contato from './components/Contato';
 import Footer from './components/Footer';
 
 import './App.scss';
@@ -34,6 +35,7 @@ export default class App extends Component {
             </p>
           </Banner>
           <Galeria />
+          <Contato />
         </main>
         <Footer empresa={this.nomeEmpresa} temaEscuro={this.state.temaEscuro} />
       </>
