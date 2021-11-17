@@ -1,11 +1,10 @@
 import { Component } from 'react';
 import { Formik, Form, Field } from 'formik';
+import { Link } from 'react-router-dom';
 
 import Alert from '../../components/Alert';
 import api from '../../services/api';
 import Repositorio from './components/repositorio';
-
-import './style.scss';
 
 export default class Main extends Component {
   constructor() {
@@ -31,6 +30,7 @@ export default class Main extends Component {
   render() {
     return (
       <>
+        <Link to={`/repository`}>Ir para Repositorios</Link>
         <div className="col-md-3 col-sm-6 my-3 container text-center">
           <h2>Procure um usuário do Github</h2>
           <Formik initialValues={{ nomeUsuario: '' }} onSubmit={this.handleSubmit}>
