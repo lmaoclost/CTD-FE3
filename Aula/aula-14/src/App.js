@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { Formik, Form, Field } from 'formik';
+import Swal from 'sweetalert2';
 import api from './services/api';
 import './App.scss';
 
@@ -15,8 +16,16 @@ export default class App extends Component {
 
   async handleSubmit({ nomeUsuario }) {
     if (nomeUsuario) {
-      const { data } = await api.get(`https://api.github.com/users/${nomeUsuario}/repos`);
-      this.setState({ repositorios: data });
+      try {
+        const response = await api.get(`https://api.github.com/users/${nomeUsuario}/repos`);
+        this.setState({ repositorios: response.data });
+      } catch (error) {
+        Swal.fire({
+          title: error.response.status,
+          icon: 'error',
+          text: error.response.statusText
+        })
+      }
     }
   }
 
@@ -38,7 +47,7 @@ export default class App extends Component {
                   {this.state.repositorios.map(({ id, name, html_url }) => {
                     return (
                       <li key={id}>
-                        <a href={html_url}>
+                        <a target="_blank" href={html_url} rel="noreferrer">
                           {name}
                         </a>
                       </li>
