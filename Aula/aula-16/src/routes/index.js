@@ -1,14 +1,14 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Main from '../pages/Main';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from '../pages/Home';
 import Repository from '../pages/Repository';
 
 const RouteList = () => (
-  <Router>
+  <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Main />} />
+      <Route path="/" element={<Home />} />
       <Route path="/repository" element={<Repository />} />
     </Routes>
-  </Router>
+  </BrowserRouter>
 );
 
 export default RouteList;

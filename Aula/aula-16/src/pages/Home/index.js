@@ -1,12 +1,12 @@
 import { Component } from 'react';
 import { Formik, Form, Field } from 'formik';
+import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 
-import Alert from '../../components/Alert';
+import Repositorio from './components/Repositorio';
 import api from '../../services/api';
-import Repositorio from './components/repositorio';
 
-export default class Main extends Component {
+export default class Home extends Component {
   constructor() {
     super();
     this.state = {
@@ -14,24 +14,24 @@ export default class Main extends Component {
     }
   }
 
-  async componentDidMount() {
-    this.handleSubmit({ nomeUsuario: 'lmaoclost' });
-  }
-
   handleSubmit = async ({ nomeUsuario }) => {
     try {
       const response = await api.get(`/users/${nomeUsuario}/repos`);
       this.setState({ repositorios: response.data });
     } catch (error) {
-      Alert({ title: error.response.status, icon: 'error', text: error.response.data.message });
+      Swal.fire({
+        title: error.response.status,
+        icon: 'error',
+        text: error.response.data.message
+      });
     }
   }
 
   render() {
     return (
       <>
-        <Link to={`/repository`}>Ir para Repositorios</Link>
-        <div className="col-md-3 col-sm-6 my-3 container text-center">
+        <Link to="/repository">Ir para repositórios</Link>
+        <div className="col-md-4 col-sm-6 my-3 container text-center">
           <h2>Procure um usuário do Github</h2>
           <Formik initialValues={{ nomeUsuario: '' }} onSubmit={this.handleSubmit}>
             <Form>
@@ -43,7 +43,7 @@ export default class Main extends Component {
             <ol className="list-group list-group-numbered my-3">
               {this.state.repositorios.map(({ id, name, html_url }) => {
                 return (
-                  <Repositorio key={id} name={name} html_url={html_url} />
+                  <Repositorio id={id} name={name} html_url={html_url} />
                 )
               })}
             </ol>
