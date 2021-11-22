@@ -12,7 +12,7 @@ export default class App extends Component {
     }
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     this.handleSubmit({ nomeUsuario: 'lmaoclost' });
   }
 
@@ -32,28 +32,26 @@ export default class App extends Component {
   render() {
     return (
       <>
-        <main>
-          <div className="col-md-4 col-sm-6 my-3 container text-center">
-            <h2>Procure um usuário do Github</h2>
-            <Formik initialValues={{ nomeUsuario: '' }} onSubmit={this.handleSubmit}>
-              <Form>
-                <Field placeholder="Insira o nome do usuário" required type="text" name="nomeUsuario" id="nomeUsuario" className="form-control my-3" />
-                <button type="submit" className="btn btn-primary">Pesquisar</button>
-              </Form>
-            </Formik>
-            {this.state.repositorios && (
-              <ol className="list-group list-group-numbered my-3">
-                {this.state.repositorios.map(({ id, name, html_url }) => {
-                  return (
-                    <li key={id}>
-                      <a target="_blank" href={html_url} rel="noreferrer">{name}</a>
-                    </li>
-                  )
-                })}
-              </ol>
-            )}
-          </div>
-        </main>
+        <div className="col-md-4 col-sm-6 my-3 container text-center">
+          <h2>Procure um usuário do github</h2>
+          <Formik initialValues={{ nomeUsuario: '' }} onSubmit={this.handleSubmit}>
+            <Form>
+              <Field placeholder="Insira o nome do usuário" required type="text" name="nomeUsuario" id="nomeUsuario" className="form-control my-3" />
+              <button className="btn btn-primary" type="submit">Pesquisar</button>
+            </Form>
+          </Formik>
+          {this.state.repositorios && (
+            <ol className="list-group list-group-numbered my-3">
+              {this.state.repositorios.map(({ id, name, html_url }) => {
+                return (
+                  <li key={id}>
+                    <a target="_blank" href={html_url} rel="noreferrer">{name}</a>
+                  </li>
+                )
+              })}
+            </ol>
+          )}
+        </div>
       </>
     );
   }
