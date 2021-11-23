@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import api from '../../services/api';
@@ -9,34 +9,29 @@ const Repository = () => {
   const repoFullName = repositoryOwner + '/' + repositoryName;
 
   useEffect(() => {
-    async function fetchData() {
+    async function loadRepositoryData() {
       try {
-        const response = await api.get(`repos/${repoFullName}`)
+        const response = await api.get(`repos/${repoFullName}`);
         setRepository(response.data);
       } catch (error) {
         Swal.fire({
           title: error.response.status,
           icon: 'error',
           text: error.response.data.message
-        });
+        })
       }
     }
-    fetchData();
+    loadRepositoryData();
   }, [repoFullName]);
 
   return (
     <>
       {repository.name && (
         <ul>
+          <li>Nome: {repository.name}</li>
+          <li>Dono: {repository.owner.login}</li>
           <li>
-            Nome: {repository.name}
-          </li>
-          <li>
-            Dono: {repository.owner.login}
-          </li>
-          <li>
-            <a href={repository.html_url}>Link</a>
-          </li>
+            <a href={repository.html_url}>Link</a></li>
         </ul>
       )}
     </>

@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 import Repositorio from './components/Repositorio';
 import api from '../../services/api';
 
-export default class SearchRepository extends Component {
+export default class Home extends Component {
   constructor() {
     super();
     this.state = {
@@ -39,9 +39,9 @@ export default class SearchRepository extends Component {
           </Formik>
           {this.state.repositorios && (
             <ol className="list-group list-group-numbered my-3">
-              {this.state.repositorios.map(({ id, full_name, html_url }) => {
+              {this.state.repositorios.map(({ id, name, full_name }) => {
                 return (
-                  <Repositorio key={id} id={id} full_name={full_name} html_url={html_url} />
+                  <Repositorio id={id} name={name} full_name={full_name} />
                 )
               })}
             </ol>

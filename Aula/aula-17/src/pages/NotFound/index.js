@@ -1,9 +1,11 @@
-const NotFound = () => {
-  return (
-    <>
-      404 nada por aqui
-    </>
-  );
-}
+import { Component } from 'react';
 
-export default NotFound;
+export default class NotFound extends Component {
+  render() {
+    return (
+      <>
+        <h2>404 nada por aqui</h2>
+      </>
+    )
+  }
+}
