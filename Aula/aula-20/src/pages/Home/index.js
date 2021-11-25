@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Formik, Form, Field } from 'formik';
-import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 import Repositorio from './components/Repositorio';
 import api from '../../services/api';
@@ -25,7 +25,7 @@ const Home = () => {
   return (
     <>
       <div className="col-md-4 col-sm-6 my-3 container text-center">
-        <h2>Procure um usuário do Github</h2>
+        <h2>Procure um usuário do Github para ver seus repositórios</h2>
         <Formik initialValues={{ nomeUsuario: '' }} onSubmit={handleSubmit}>
           <Form>
             <Field placeholder="Insira o nome do usuário" required type="text" name="nomeUsuario" id="nomeUsuario" className="form-control my-3" />
@@ -34,10 +34,10 @@ const Home = () => {
         </Formik>
         {repositories.length !== 0 && (
           <ol className="list-group list-group-numbered my-3">
-            <Link to={`/owner/${repositories[0].owner.login}`}>Mais detalhes sobre {repositories[0].owner.login} </Link>
-            {repositories.map(({ id, name, full_name, owner }) => {
+            <Link to={`/user/${repositories[0].owner.login}`}>Mais detalhes sobre {repositories[0].owner.login}</Link>
+            {repositories.map(({ id, name, full_name }) => {
               return (
-                <Repositorio id={id} name={name} full_name={full_name} owner={owner} />
+                <Repositorio id={id} name={name} full_name={full_name} />
               )
             })}
           </ol>
