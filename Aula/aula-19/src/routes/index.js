@@ -6,8 +6,7 @@ import NotFound from '../pages/NotFound';
 const RouteList = () => (
   <BrowserRouter>
     <nav>
-      <Link to="/">Ir para a Home</Link>
-      <br />
+      <Link to="/">Ir para a Home</Link><br />
       <Link to="/lmaoclost/Aulas_CTD">Link para um repositório existente</Link>
     </nav>
     <Routes>

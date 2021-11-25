@@ -22,7 +22,7 @@ const Repository = () => {
       }
     }
     loadRepositoryData();
-  }, [repoFullName]);
+  });
 
   return (
     <>
