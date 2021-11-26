@@ -6,10 +6,11 @@ const NotFound = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    setTimeout(() => { navigate('/') }, 5000);
-
     const intervalId = setInterval(() => {
-      setTimer(count => --count)
+      setTimer(timer => --timer)
+      if (timer === 0) {
+        navigate('/')
+      }
     }, 1000);
 
     return () => clearInterval(intervalId)
