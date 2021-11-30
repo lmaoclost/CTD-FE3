@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Formik, Form, Field } from 'formik';
 import Swal from 'sweetalert2';
 import api from '../../services/api';
+
 import './style.scss';
 
 const UserDetails = () => {
@@ -11,8 +12,8 @@ const UserDetails = () => {
   const navigate = useNavigate();
 
   const getUserData = useCallback(async ({ nomeUsuario }) => {
-    if (userName !== nomeUsuario) {
-      navigate(`/user/${nomeUsuario}`)
+    if (userName !== nomeUsuario && nomeUsuario !== '') {
+      navigate(`/user/${nomeUsuario}`);
       return;
     }
     try {
