@@ -1,13 +1,12 @@
 import { useState } from 'react';
-import { Container, Col, ListGroup, Button } from 'react-bootstrap';
-import { Helmet } from "react-helmet";
 import { Formik, Form, Field } from 'formik';
+import { Helmet } from 'react-helmet';
+import { Container, Col, ListGroup, Button } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 
 import Repositorio from './components/Repositorio';
 import api from '../../services/api';
-import './style.scss';
 
 const Home = () => {
   const [repositories, setRepositories] = useState([]);
@@ -31,7 +30,7 @@ const Home = () => {
         <title>Githubble | {repositories[0] ? repositories[0].owner.login : 'Home'}</title>
       </Helmet>
       <Container className="my-3 text-center">
-        <Col md={{ span: 6, offset: 3 }} sm={{ span: 6, offset: 3 }}>
+        <Col md={{ span: 6, offset: 3 }} sm={{ span: 10, offset: 1 }}>
           <h2>Procure um usuário do Github para ver seus repositórios</h2>
           <Formik initialValues={{ nomeUsuario: '' }} onSubmit={handleSubmit}>
             <Form>

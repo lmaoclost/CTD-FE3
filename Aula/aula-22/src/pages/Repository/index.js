@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Col, Container, Row, ListGroup } from 'react-bootstrap';
-import { Helmet } from "react-helmet";
 import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+import { Container, Col, Row, ListGroup } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import api from '../../services/api';
 
@@ -41,9 +41,9 @@ const Repository = () => {
       <Helmet>
         <title>Githubble | {repoFullName}</title>
       </Helmet>
-      <section id="repositoryDetails">
-        <Container className="my-3 text-center">
-          <Col md={{ span: 6, offset: 3 }} sm={{ span: 6, offset: 3 }}>
+      <section id="repositoryDetails" className="my-3 text-center">
+        <Col md={{ span: 4, offset: 4 }} sm={{ span: 6, offset: 3 }}>
+          <Container>
             {repository.name && (
               <>
                 <h2>Dados do Repositório</h2>
@@ -67,29 +67,29 @@ const Repository = () => {
                 </ListGroup>
               </>
             )}
-            {repositoryContributors.length > 0 && (
-              <section id="userRepository">
-                <h2>Usuários que contribuiram</h2>
-                <Container className="justify-content-center align-items-center">
-                  <Row>
-                    {repositoryContributors.map(({ login, id, avatar_url, html_url }) => {
-                      return (
-                        <Col key={id} xl={4} lg={6}>
-                          <ListGroup as="ul">
-                            <ListGroup.Item as="li"><img src={avatar_url} alt={`Foto do ${login}`} /></ListGroup.Item>
-                            <ListGroup.Item as="li">{login}</ListGroup.Item>
-                            <ListGroup.Item as="li"><a href={html_url} className="btn btn-secondary">Perfil</a></ListGroup.Item>
-                          </ListGroup>
-                        </Col>
-                      )
-                    })
-                    }
-                  </Row>
-                </Container>
-              </section>
-            )}
-          </Col>
-        </Container>
+          </Container>
+        </Col>
+        {repositoryContributors.length > 0 && (
+          <section id="userRepository">
+            <h2>Usuários que contribuiram</h2>
+            <Container className="justify-content-center align-items-center">
+              <Row>
+                {repositoryContributors.map(({ login, id, avatar_url, html_url, bio, blog }) => {
+                  return (
+                    <Col xl={4} lg={6} md={6} sm={6} key={id}>
+                      <ListGroup as="ul">
+                        <ListGroup.Item as="li"><img src={avatar_url} alt={`Foto do ${login}`} /></ListGroup.Item>
+                        <ListGroup.Item as="li">{login}</ListGroup.Item>
+                        <ListGroup.Item as="li"><a href={html_url} className="btn btn-secondary">Perfil</a></ListGroup.Item>
+                      </ListGroup>
+                    </Col>
+                  )
+                })
+                }
+              </Row>
+            </Container>
+          </section>
+        )}
       </section>
     </>
   )

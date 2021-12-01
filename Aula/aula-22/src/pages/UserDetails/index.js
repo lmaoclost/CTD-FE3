@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Col, Container, ListGroup } from 'react-bootstrap';
-import { Helmet } from "react-helmet";
+import { Col, Container, ListGroup, Button } from 'react-bootstrap';
+import { Helmet } from 'react-helmet';
 import { Formik, Form, Field } from 'formik';
 import Swal from 'sweetalert2';
 import api from '../../services/api';
@@ -43,12 +43,12 @@ const UserDetails = () => {
       </Helmet>
       <section id="user">
         <Container className="my-3 text-center">
-          <Col md={{ span: 6, offset: 3 }} sm={{ span: 6, offset: 3 }}>
+          <Col md={{ span: 6, offset: 3 }} sm={{ span: 10, offset: 1 }}>
             <h2>Procure um usuário do Github para ver suas informações</h2>
             <Formik initialValues={{ nomeUsuario: '' }} onSubmit={getUserData}>
               <Form>
                 <Field placeholder="Insira o nome do usuário" required type="text" name="nomeUsuario" id="nomeUsuario" className="form-control" />
-                <button type="submit" className="btn btn-primary my-3">Pesquisar</button>
+                <Button type="submit" variant="primary" className="my-3">Pesquisar</Button>
               </Form>
             </Formik>
             {user.login && (

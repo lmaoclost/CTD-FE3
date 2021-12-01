@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Helmet } from "react-helmet";
+import { Helmet } from 'react-helmet';
 
 const NotFound = () => {
   const navigate = useNavigate();
