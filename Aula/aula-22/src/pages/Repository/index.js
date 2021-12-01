@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
 import { Container, Col, Row, ListGroup } from 'react-bootstrap';
+import { Helmet } from 'react-helmet';
 import Swal from 'sweetalert2';
 import api from '../../services/api';
 
@@ -39,7 +39,7 @@ const Repository = () => {
   return (
     <>
       <Helmet>
-        <title>Githubble | {repoFullName}</title>
+        <title>GitHubble | {repoFullName}</title>
       </Helmet>
       <section id="repositoryDetails" className="my-3 text-center">
         <Col md={{ span: 4, offset: 4 }} sm={{ span: 6, offset: 3 }}>
@@ -69,14 +69,15 @@ const Repository = () => {
             )}
           </Container>
         </Col>
+
         {repositoryContributors.length > 0 && (
           <section id="userRepository">
             <h2>Usuários que contribuiram</h2>
             <Container className="justify-content-center align-items-center">
               <Row>
-                {repositoryContributors.map(({ login, id, avatar_url, html_url, bio, blog }) => {
+                {repositoryContributors.map(({ login, id, avatar_url, html_url }) => {
                   return (
-                    <Col xl={4} lg={6} md={6} sm={6} key={id}>
+                    <Col xl={4} sm={6} key={id}>
                       <ListGroup as="ul">
                         <ListGroup.Item as="li"><img src={avatar_url} alt={`Foto do ${login}`} /></ListGroup.Item>
                         <ListGroup.Item as="li">{login}</ListGroup.Item>

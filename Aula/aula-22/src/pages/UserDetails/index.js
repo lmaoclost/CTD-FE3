@@ -39,7 +39,7 @@ const UserDetails = () => {
   return (
     <>
       <Helmet>
-        <title>Githubble | {userName}</title>
+        <title>GitHubble | {userName}</title>
       </Helmet>
       <section id="user">
         <Container className="my-3 text-center">

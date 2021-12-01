@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Formik, Form, Field } from 'formik';
-import { Helmet } from 'react-helmet';
 import { Container, Col, ListGroup, Button } from 'react-bootstrap';
+import { Helmet } from 'react-helmet';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 
@@ -27,29 +27,31 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Githubble | {repositories[0] ? repositories[0].owner.login : 'Home'}</title>
+        <title>GitHubble | {repositories[0] ? repositories[0].owner.login : 'Home'}</title>
       </Helmet>
       <Container className="my-3 text-center">
         <Col md={{ span: 6, offset: 3 }} sm={{ span: 10, offset: 1 }}>
           <h2>Procure um usuário do Github para ver seus repositórios</h2>
           <Formik initialValues={{ nomeUsuario: '' }} onSubmit={handleSubmit}>
             <Form>
-              <Field placeholder="Insira o nome do usuário" required type="text" name="nomeUsuario" id="nomeUsuario" className="form-control my-3" />
-              <Button variant="primary" type="submit">Pesquisar</Button>
+              <Field placeholder="Insira o nome do usuário" required type="text" name="nomeUsuario" id="nomeUsuario" className="form-control" />
+              <Button type="submit" variant="primary" className="my-3">Pesquisar</Button>
             </Form>
           </Formik>
-          {repositories.length !== 0 && (
-            <ListGroup as="ol" numbered className="my-3">
-              <Link to={`/user/${repositories[0].owner.login}`}>Mais detalhes sobre {repositories[0].owner.login}</Link>
-              {repositories.map(({ id, name, full_name }) => {
-                return (
-                  <Repositorio id={id} name={name} full_name={full_name} />
-                )
-              })}
-            </ListGroup>
-          )}
         </Col>
       </Container>
+      <Col md={{ span: 6, offset: 4 }} sm={{ span: 10, offset: 1 }}>
+        {repositories.length !== 0 && (
+          <ListGroup as="ol" numbered className="my-3">
+            <Link to={`/user/${repositories[0].owner.login}`}>Mais detalhes sobre {repositories[0].owner.login}</Link>
+            {repositories.map(({ id, name, full_name }) => {
+              return (
+                <Repositorio id={id} name={name} full_name={full_name} />
+              )
+            })}
+          </ListGroup>
+        )}
+      </Col>
     </>
   );
 }
