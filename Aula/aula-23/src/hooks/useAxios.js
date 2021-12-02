@@ -6,7 +6,7 @@ const useAxios = (url) => {
   const [data, setData] = useState({});
 
   useEffect(() => {
-    async function loadRepositoryData() {
+    async function loadData() {
       try {
         const response = await api.get(url);
         setData(response.data);
@@ -18,10 +18,10 @@ const useAxios = (url) => {
         })
       }
     }
-    loadRepositoryData();
+    loadData();
   }, [url]);
 
-  return data
+  return data;
 }
 
 export default useAxios;

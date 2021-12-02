@@ -1,7 +1,8 @@
-import { Container, Col, Row, ListGroup } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
+import { Container, Col, Row, ListGroup } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
 import useAxios from '../../hooks/useAxios';
+
 import './style.scss';
 
 const Repository = () => {
