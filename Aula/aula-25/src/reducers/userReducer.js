@@ -4,7 +4,7 @@ export const userReducer = (state, action) => {
       const checkIfUserAlreadyExists = state.filter((user) => {
         return user.id === action.user.id
       });
-      if (!checkIfUserAlreadyExists) {
+      if (!checkIfUserAlreadyExists.length) {
         return [...state, {
           id: action.user.id,
           login: action.user.login,
