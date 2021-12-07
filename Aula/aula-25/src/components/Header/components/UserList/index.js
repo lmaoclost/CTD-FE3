@@ -5,6 +5,7 @@ import { GithubContext } from '../../../../contexts/GithubContext';
 
 const UserList = () => {
   const { users } = useContext(GithubContext);
+
   return users.length ? (
     users.map(user => (
       <NavDropdown.Item key={user.id} as={Link} to={`/user/${user.login}`}>{user.login}</NavDropdown.Item>
