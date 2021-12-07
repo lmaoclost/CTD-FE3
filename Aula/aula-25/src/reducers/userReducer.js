@@ -2,10 +2,10 @@ export const userReducer = (state, action) => {
   switch (action.type) {
     case 'ADD_USER':
       const checkIfUserAlreadyExists = state.filter((user) => {
-        return user.id === action.user.id
+        return user.id === action.payload.id
       });
       if (!checkIfUserAlreadyExists.length) {
-        return [...state, action.user];
+        return [...state, action.payload];
       }
       return state;
     default:

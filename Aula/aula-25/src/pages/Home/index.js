@@ -11,13 +11,13 @@ import api from '../../services/api';
 
 const Home = () => {
   const [repositories, setRepositories] = useState([]);
-  const { dispatch } = useContext(GithubContext);
+  const { addUser } = useContext(GithubContext);
 
   const handleSubmit = async ({ nomeUsuario }) => {
     try {
       const response = await api.get(`/users/${nomeUsuario}/repos`);
       setRepositories(response.data);
-      dispatch({ type: 'ADD_USER', user: response.data[0].owner });
+      addUser(response.data[0].owner);
     } catch (error) {
       Swal.fire({
         title: error.response.status,

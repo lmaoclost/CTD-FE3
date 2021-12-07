@@ -9,12 +9,14 @@ const GithubContextProvider = ({ children }) => {
     return localData ? JSON.parse(localData) : [];
   });
 
+  const addUser = (user) => dispatch({ type: 'ADD_USER', payload: user });
+
   useEffect(() => {
     localStorage.setItem('users', JSON.stringify(users));
   }, [users])
 
   return (
-    <GithubContext.Provider value={{ users, dispatch }}>
+    <GithubContext.Provider value={{ users, addUser }}>
       {children}
     </GithubContext.Provider>
   )
