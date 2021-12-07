@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react';
 import { Formik, Form, Field } from 'formik';
 import { Container, Col, ListGroup, Button } from 'react-bootstrap';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 

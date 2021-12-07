@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { Col, Container, ListGroup } from 'react-bootstrap';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { GithubContext } from '../../contexts/GithubContext';
 
 import './style.scss';

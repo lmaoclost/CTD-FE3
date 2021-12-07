@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { Container, Col, Row, ListGroup } from 'react-bootstrap';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import useAxios from '../../hooks/useAxios';
 
 import './style.scss';
