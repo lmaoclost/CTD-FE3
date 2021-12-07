@@ -14,7 +14,7 @@ export const userReducer = (state, action) => {
         ]
       }
       else {
-        return [...state];
+        return state;
       }
     default:
       return state;
