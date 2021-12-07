@@ -1,21 +1,23 @@
-import React, { createContext, useReducer, useEffect } from 'react';
+import { createContext, useReducer, useEffect } from 'react';
 import { userReducer } from '../reducers/userReducer';
 
-export const UserContext = createContext();
+export const GithubContext = createContext();
 
-const UserContextProvider = ({ children }) => {
+const GithubContextProvider = ({ children }) => {
   const [users, dispatch] = useReducer(userReducer, [], () => {
     const localData = localStorage.getItem('users');
     return localData ? JSON.parse(localData) : [];
   });
+
   useEffect(() => {
     localStorage.setItem('users', JSON.stringify(users));
-  }, [users]);
+  }, [users])
+
   return (
-    <UserContext.Provider value={{ users, dispatch }}>
+    <GithubContext.Provider value={{ users, dispatch }}>
       {children}
-    </UserContext.Provider>
-  );
+    </GithubContext.Provider>
+  )
 }
 
-export default UserContextProvider;
+export default GithubContextProvider;

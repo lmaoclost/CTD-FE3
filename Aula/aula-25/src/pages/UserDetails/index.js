@@ -2,14 +2,14 @@ import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { Col, Container, ListGroup } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
-import { UserContext } from '../../contexts/UserContext';
+import { GithubContext } from '../../contexts/GithubContext';
 
 import './style.scss';
 
 const UserDetails = () => {
   const { userName } = useParams();
-  const { users } = useContext(UserContext);
-  const [user] = users.filter((user) => { return user.login === userName });
+  const { users } = useContext(GithubContext);
+  const [user] = users.filter((user) => user.login === userName);
 
   return (
     <>

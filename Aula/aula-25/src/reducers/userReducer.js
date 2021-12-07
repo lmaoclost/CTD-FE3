@@ -5,18 +5,11 @@ export const userReducer = (state, action) => {
         return user.id === action.user.id
       });
       if (!checkIfUserAlreadyExists.length) {
-        return [...state, {
-          id: action.user.id,
-          login: action.user.login,
-          author: action.user.html_url,
-          avatar_url: action.user.avatar_url,
-        }
-        ]
+        return [...state, action.user];
       }
-      else {
-        return state;
-      }
+      return state;
     default:
       return state;
   }
+
 }

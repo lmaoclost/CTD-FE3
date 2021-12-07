@@ -5,13 +5,13 @@ import { Helmet } from 'react-helmet';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 
-import { UserContext } from '../../contexts/UserContext';
+import { GithubContext } from '../../contexts/GithubContext';
 import Repositorio from './components/Repositorio';
 import api from '../../services/api';
 
 const Home = () => {
   const [repositories, setRepositories] = useState([]);
-  const { dispatch } = useContext(UserContext);
+  const { dispatch } = useContext(GithubContext);
 
   const handleSubmit = async ({ nomeUsuario }) => {
     try {
