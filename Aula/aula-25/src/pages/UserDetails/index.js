@@ -9,7 +9,7 @@ import './style.scss';
 const UserDetails = () => {
   const { userName } = useParams();
   const { users } = useContext(GithubContext);
-  const [user] = users.filter((user) => user.login === userName);
+  const [user] = users.filter(user => user.login === userName);
 
   return (
     <>

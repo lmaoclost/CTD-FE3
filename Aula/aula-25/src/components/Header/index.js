@@ -5,11 +5,11 @@ import UserList from './components/UserList';
 const Header = () => (
   <Navbar bg="dark" variant="dark" expand="md">
     <Container>
-      <Link to="/" className="navbar-brand">GitHubble</Link>
+      <Navbar.Brand as={Link} to="/">GitHubble</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
         <Nav>
-          <Link to="/lmaoclost/Aulas_CTD" className="nav-link">/lmaoclost/Aulas_CTD</Link>
+          <Nav.Link as={Link} to={`/lmaoclost/Aulas_CTD`}>/lmaoclost/Aulas_CTD</Nav.Link>
           <NavDropdown title="Usuários Anteriores" id="basic-nav-dropdown">
             <UserList />
           </NavDropdown>
