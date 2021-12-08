@@ -3,21 +3,28 @@ import Button from '../components/Button';
 export default {
   title: 'components/Button',
   component: Button,
-  argTypes: { handleClick: { action: "handleClick" } }
+  argTypes: { handleClick: { action: 'handleClick' }, }
 }
 
 const Template = args => <Button {...args} />
 
-export const Primary = Template.bind({})
+export const Primary = Template.bind({});
 Primary.args = {
   label: 'Click me',
   variant: 'primary',
   size: 'md'
 }
 
-export const Secondary = Template.bind({})
+export const Secondary = Template.bind({});
 Secondary.args = {
   label: 'Click me',
   variant: 'secondary',
   size: 'md'
+}
+
+export const Danger = Template.bind({});
+Danger.args = {
+  label: 'Click me',
+  variant: 'danger',
+  size: 'lg'
 }

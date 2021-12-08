@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import { Formik, Form, Field } from 'formik';
-import { Container, Col, ListGroup, Button } from 'react-bootstrap';
+import { Container, Col, ListGroup } from 'react-bootstrap';
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { GithubContext } from '../../contexts/GithubContext';
 import Repositorio from './components/Repositorio';
 import api from '../../services/api';
+import Button from '../../components/Button';
 
 const Home = () => {
   const [repositories, setRepositories] = useState([]);
@@ -38,7 +39,7 @@ const Home = () => {
           <Formik initialValues={{ nomeUsuario: '' }} onSubmit={handleSubmit}>
             <Form>
               <Field placeholder="Insira o nome do usuário" required type="text" name="nomeUsuario" id="nomeUsuario" className="form-control" />
-              <Button type="submit" variant="primary" className="my-3">Pesquisar</Button>
+              <Button variant="primary" label="Pesquisar" />
             </Form>
           </Formik>
         </Col>

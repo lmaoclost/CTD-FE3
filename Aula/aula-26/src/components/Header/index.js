@@ -2,7 +2,7 @@ import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import UserList from './components/UserList';
 
-const Header = ({ bg, variant }) => (
+const Header = ({ bg = "dark", variant = "dark" }) => (
   <Navbar bg={bg} variant={variant} expand="md">
     <Container>
       <Navbar.Brand as={Link} to="/">GitHubble</Navbar.Brand>

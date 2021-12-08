@@ -2,7 +2,7 @@ import Header from '../components/Header';
 
 export default {
   title: 'components/Header',
-  component: Header,
+  component: Header
 }
 
 const Template = args => <Header {...args} />
@@ -10,11 +10,11 @@ const Template = args => <Header {...args} />
 export const Dark = Template.bind({})
 Dark.args = {
   bg: 'dark',
-  variant: 'dark',
+  variant: 'dark'
 }
 
 export const Light = Template.bind({})
 Light.args = {
   bg: 'light',
-  variant: 'light',
+  variant: 'light'
 }
