@@ -2,8 +2,8 @@ import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import UserList from './components/UserList';
 
-const Header = () => (
-  <Navbar bg="dark" variant="dark" expand="md">
+const Header = ({ bg, variant }) => (
+  <Navbar bg={bg} variant={variant} expand="md">
     <Container>
       <Navbar.Brand as={Link} to="/">GitHubble</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
